@@ -47,7 +47,8 @@ generate_keypair() {
   # Generate keypair
   bashio::log.info "Generating keypair"
   /usr/bin/tesla-keygen -f -keyring-type pass -key-name myself create > /share/tesla/com.tesla.3p.public-key.pem
-  cat /share/tesla/com.tesla.3p.public-key.pem
+  cp /share/tesla/com.tesla.3p.public-key.pem /homeassistant/www/tesla/com.tesla.3p.public-key.pem
+  cat /homeassistant/www/tesla/com.tesla.3p.public-key.pem
 }
 
 # run on first launch only

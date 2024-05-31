@@ -23,6 +23,7 @@ echo "Starting nginx container..."
 docker run --rm --name nginx -d -p 4430:443 -e DOMAIN="$DOMAIN" --network tesla \
     -v ./ssl:/ssl:ro \
     -v ./share:/share:ro \
+    -v ./pem:/homeassistant/www/tesla:ro \
     -v ./nginx/nginx_tesla.conf:/etc/nginx/conf.d/nginx_tesla.conf:ro \
     -v ./nginx/dhparams.pem:/data/dhparams.pem:ro \
     nginx
